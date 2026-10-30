@@ -1,4 +1,4 @@
-# Mentaiko! — UMKM Macaroni Mentai Landing Page
+# Maklor vici! — UMKM Macaroni Mentai Landing Page
 
 Website satu halaman dengan katalog menu, filter kategori, keranjang belanja, hitung subtotal otomatis, dan checkout WhatsApp.
 
