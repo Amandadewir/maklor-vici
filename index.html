@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8F2028" />
+  <meta name="description" content="Maklor Vici! — macaroni mentai creamy, cheesy, dan dibuat fresh untuk mood terbaikmu." />
+
+  <title>Maklor Vici! — Little Bowl, Big Happiness</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="announcement">
+    ♡ Made fresh with love · Order for your happy tummy! ♡
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Maklor Vici beranda">
+      <span class="brand-mark">m!</span>
+      <span>Maklor Vici!<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navigasi utama">
+      <a href="#menu">Our Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#social">Find Us</a>
+    </nav>
+
+    <button
+      class="cart-button"
+      id="open-cart"
+      type="button"
+      aria-label="Buka keranjang"
+      aria-controls="cart-drawer"
+      aria-expanded="false"
+    >
+      <span>♡</span>
+      My Cart
+      <b id="cart-count">0</b>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <span class="sparkle">✳</span>
+          YOUR NEW COMFORT FOOD
+        </span>
+
+        <h1>
+          A little bit<br>
+          of <span class="pink-word">mentai</span>,<br>
+          a lot of <span class="orange-word">happy!</span>
+        </h1>
+
+        <p>
+          Macaroni creamy, saus mentai yang gurih, dan cheesy goodness
+          di setiap suapan. Dibuat fresh khusus buat kamu ♡
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#menu">
+            Pick Your Mood <span>↗</span>
+          </a>
+
+          <a class="text-link" href="#story">
+            Get to know us <span>↓</span>
+          </a>
+        </div>
+
+        <div class="mini-note">
+          <span class="note-heart">♡</span>
+          <span>
+            <b>Made with love</b><br>
+            <small>Small batch, big flavor.</small>
+          </span>
+        </div>
+
+        <span class="doodle doodle-star">✳</span>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+
+        <div class="photo-frame">
+          <img
+         src="assets/maklor_utama.jpg"
+         alt="Maklor Vici — menu macaroni mentai"
+         >
+        </div>
+
+        <div class="floating-sticker sticker-top">
+          sooo<br>cheesy! <span>♡</span>
+        </div>
+
+        <div class="floating-sticker sticker-bottom">
+          <span>✦</span> YUMMY<br>TIME!
+        </div>
+
+        <span class="hero-sparkle sparkle-one">✦</span>
+        <span class="hero-sparkle sparkle-two">✳</span>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section section-wrap" id="menu">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">MADE FOR YOUR CRAVINGS</span>
+          <h2>Meet the <span class="pink-word">menu!</span></h2>
+        </div>
+
+        <p>
+          Pick your fave, add to cart,<br>
+          and let the happy begin.
+        </p>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Filter kategori menu">
+        <button class="filter-chip active" type="button" data-filter="all">
+          All the goodies
+        </button>
+
+        <button class="filter-chip" type="button" data-filter="best-seller">
+          Best Seller
+        </button>
+
+        <button class="filter-chip" type="button" data-filter="add-on">
+          Add On
+        </button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+
+      <div class="menu-footnote">
+        ♡ Semua menu dibuat fresh. Foto dan harga dapat disesuaikan dengan produk asli.
+      </div>
+    </section>
+
+<!-- CART BACKDROP -->
+<div
+  class="cart-backdrop"
+  id="cart-backdrop"
+  aria-hidden="true"
+></div>
+
+<!-- CART POPUP -->
+<aside
+  class="cart-drawer"
+  id="cart-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cart-title"
+  aria-hidden="true"
+  tabindex="-1"
+>
+  <div class="cart-header">
+    <div>
+      <span class="eyebrow">YOUR HAPPY BOX</span>
+      <h2 id="cart-title">My cart <span>♡</span></h2>
+    </div>
+
+    <button
+      class="icon-button"
+      id="close-cart"
+      type="button"
+      aria-label="Tutup keranjang"
+      title="Tutup keranjang"
+    >
+      ✕
+    </button>
+  </div>
+
+  <div class="cart-items" id="cart-items"></div>
+
+  <div class="empty-cart" id="empty-cart">
+    <span>♡</span>
+    <h3>Your cart is feeling lonely!</h3>
+    <p>Yuk pilih macaroni favoritmu dulu.</p>
+
+    <button
+      class="button button-primary"
+      id="browse-menu"
+      type="button"
+    >
+      Explore Menu <span>↗</span>
+    </button>
+  </div>
+
+  <div class="cart-summary" id="cart-summary">
+    <div class="total-line">
+      <span>Subtotal</span>
+      <strong id="subtotal">Rp0</strong>
+    </div>
+
+    <p class="cart-hint">
+      Ongkir dikonfirmasi langsung melalui WhatsApp.
+    </p>
+
+    <form id="checkout-form">
+      <label for="customer-name">Nama kamu</label>
+      <input
+        id="customer-name"
+        name="name"
+        type="text"
+        placeholder="Nama pemesan"
+        autocomplete="name"
+        required
+      >
+
+      <label for="order-type">Pesanan</label>
+      <select id="order-type" name="orderType">
+        <option value="Pickup">Ambil sendiri (pickup)</option>
+        <option value="Delivery">Diantar (delivery)</option>
+      </select>
+
+      <label for="customer-note">Catatan (opsional)</label>
+      <textarea
+        id="customer-note"
+        name="note"
+        rows="2"
+        placeholder="Contoh: saus dipisah, alamat pengiriman..."
+      ></textarea>
+
+      <button
+        class="button button-whatsapp"
+        id="checkout-btn"
+        type="submit"
+      >
+        <span aria-hidden="true">☏</span>
+        Checkout via WhatsApp
+        <span aria-hidden="true">↗</span>
+      </button>
+    </form>
+  </div>
+</aside>
+
+    <!-- STORY -->
+    <section class="story-section" id="story">
+      <div class="story-inner section-wrap">
+        <div class="story-art">
+          <div class="story-circle"></div>
+         
+       <div class="story-photo">
+        <img
+         src="assets/story-maklor.jpg"
+          alt="Cerita Maklor Vici — Good Food, Good Mood"
+        >
+        </div>
+
+
+          <span class="story-sticker">made<br>with ♡</span>
+          <span class="story-doodle">✿</span>
+        </div>
+
+        <div class="story-copy">
+          <span class="eyebrow">A LITTLE STORY ABOUT US</span>
+
+          <h2>
+            Good food.<br>
+            <span class="pink-word">Good mood.</span>
+          </h2>
+
+          <p>
+            Di Maklor Vici!, kami percaya comfort food nggak harus ribet.
+            Semangkuk macaroni hangat dengan saus mentai creamy bisa jadi
+            little treat untuk hari yang panjang.
+          </p>
+
+          <p>
+            Dibuat dalam batch kecil, disiapkan dengan perhatian,
+            dan siap menemani me-time kamu.
+          </p>
+
+          <a class="button button-dark" href="#menu">
+            Find your favorite <span>♡</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="social-section section-wrap" id="social">
+      <div class="social-card">
+        <span class="eyebrow">LET'S BE FOOD BESTIES</span>
+
+        <h2>
+          Follow the <span class="pink-word">yummy</span> journey!
+        </h2>
+
+        <p>
+          Menu update, promo gemas, dan behind the scenes ada di sini.
+        </p>
+
+       
+<div class="social-links">
+  <a
+    href="https://www.instagram.com/maklor_vici/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-link"
+  >
+    <span class="social-icon">◎</span>
+    Instagram
+    <span>↗</span>
+  </a>
+
+  <a
+    href="https://www.tiktok.com/@maklor.vici?_r=1&_t=ZS-986K1dtOYUh/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-link"
+  >
+    <span class="social-icon">♪</span>
+    TikTok
+    <span>↗</span>
+  </a>
+
+  <a
+    href="https://maps.app.goo.gl/KD5CUZMoWXmUpXJs9"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-link"
+  >
+    <span class="social-icon">⌖</span>
+    Maps
+    <span>↗</span>
+  </a>
+</div>
+
+<span class="social-doodle">✳</span>
+</div>
+</section>
+</main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a class="brand" href="#home">
+      <span class="brand-mark">m!</span>
+      <span>Maklor Vici<span class="brand-dot">.</span></span>
+    </a>
+
+    <p>Little Bowl, Big Happiness. ♡</p>
+
+    <span>
+      © <span id="year"></span> Maklor Vici! Made with love.
+    </span>
+  </footer>
+
+    <!-- NOTIFIKASI -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+```
