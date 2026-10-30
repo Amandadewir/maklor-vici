@@ -1442,3 +1442,48 @@ body.cart-open {
     transition: none;
   }
 }
+
+/* =================================
+   FIX DECORATIVE SYMBOLS & ARROWS
+================================= */
+
+/* Simbol dekorasi agar tidak menjadi emoji hijau */
+.sparkle,
+.doodle-star,
+.hero-sparkle,
+.story-doodle,
+.social-doodle {
+    font-family: "DM Sans", sans-serif;
+    font-variant-emoji: text;
+    color: var(--white);
+}
+
+/* Panah pada tombol */
+.arrow-icon {
+    display: inline-block;
+    font-family: "DM Sans", sans-serif;
+    font-variant-emoji: text;
+    color: #FFF6EC !important;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Panah tombol utama */
+.button-primary .arrow-icon {
+    color: #FFF6EC !important;
+}
+
+/* Panah link di hero */
+.text-link .arrow-icon {
+    color: #FFF6EC !important;
+}
+
+/* Panah checkout */
+.button-whatsapp .arrow-icon {
+    color: #FFF6EC !important;
+}
+
+/* Panah social media */
+.social-link .arrow-icon {
+    color: #FFF6EC !important;
+}
