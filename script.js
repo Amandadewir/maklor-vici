@@ -10,14 +10,14 @@ const PRODUCTS = [
     name: "Maklor Ori",
     image: "assets/maklor-ori.jpg",
     sizes: { Small: 7000, Medium: 9000, Large: 12000 },
-    category: "best-seller"
+    category: "all",
   },
   {
     id: "nori",
     name: "Maklor Nori",
     image: "assets/maklor-nori.jpg",
     sizes: { Small: 9000, Medium: 11000, Large: 14000 },
-    category: "all"
+    category: "best-seller"
   },
   {
     id: "sosis",
