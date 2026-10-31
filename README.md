@@ -4,7 +4,7 @@ Website satu halaman dengan katalog menu, filter kategori, keranjang belanja, hi
 
 ## Menjalankan
 1. Ekstrak ZIP.
-2. Buka folder `mentaiko-website` di VS Code.
+2. Buka folder `maklor vici-website` di VS Code.
 3. Buka `index.html` di browser, atau gunakan extension Live Server.
 
 ## WAJIB disesuaikan sebelum dipublikasikan
